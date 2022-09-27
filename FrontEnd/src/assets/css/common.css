@@ -1,6 +1,6 @@
 .outer {
   height: 100vh;
-  background: linear-gradient(to top, #18f0e9 30%, #fcffff 90%) no-repeat;
+  background-color: #f7e4eb;
 }
 
 .panel-heading {
@@ -31,10 +31,11 @@ a:hover {
 }
 
 .panel {
-  margin-top: 180px;
+  margin-top: 50px;
   min-height: 380px;
-  box-shadow: 20px 20px 80px rgb(206, 245, 245);
+  /* box-shadow: 20px 20px 20px rgb(206, 245, 245); */
   border-radius: 12px;
+  margin-right: 100px;
 }
 
 .input-field {
@@ -67,7 +68,7 @@ input[type="password"] {
   box-shadow: none;
 }
 
-img {
+.image {
   width: 40px;
   height: 40px;
   object-fit: cover;

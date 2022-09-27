@@ -60,6 +60,8 @@ export class ViewbooksComponent implements OnInit {
             this.getBooks();
             this.onCloseModal();
             alert('Book Details successfully updated!!!');
+            this.bookForm.reset();
+            this.editMode = false;
           },
           (err) => {
             console.log(err);
@@ -71,6 +73,7 @@ export class ViewbooksComponent implements OnInit {
             this.getBooks();
             this.onCloseModal();
             alert('Book Details successfully added!!!');
+            this.bookForm.reset();
           },
           (err) => {
             console.log(err);

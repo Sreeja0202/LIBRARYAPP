@@ -37,7 +37,11 @@ export class SignupComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
         alert('Signup successfull');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
       });
+  }
+
+  onClickLogin() {
+    this.router.navigate(['/login']);
   }
 }

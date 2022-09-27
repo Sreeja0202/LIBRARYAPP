@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewbooksComponent } from './viewbooks/viewbooks.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ViewbooksComponent } from './viewbooks/viewbooks.component';
     HomeComponent,
     SignupComponent,
     ViewbooksComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

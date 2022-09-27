@@ -1,74 +1,132 @@
-<div class="outer">
-  <div class="container">
-    <div class="row">
-      <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
-        <div class="panel border bg-white">
-          <div class="panel-heading">
-            <h3 class="pt-3 font-weight-bold"><b>LOGIN</b></h3>
-          </div>
-          <div class="panel-body p-3">
-            <form [formGroup]="loginForm" (ngSubmit)="logIn()">
-              <div class="form-group pt-3">
-                <label for="femail">Enter your Email</label>
-                <div class="input-field">
-                  <span class="fa fa-user p-2"></span>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    class="form-control"
-                    formControlName="femail"
-                  />
-                </div>
-              </div>
-              <div class="form-group pt-3">
-                <label for="fpassword">Enter your Password</label>
-                <div class="input-field">
-                  <!-- for seeing the password - got error - later check -->
-                  <!-- <span class="fa fa-lock p-2"></span>
-                  <input [type]="type" placeholder="Password" /> -->
-                  <!-- <span class="{{ eyeIcon }}" (click)="hideShowpass()"></span> -->
-                  <span class="fa fa-lock p-2"></span>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    class="form-control"
-                    formControlName="fpassword"
-                  />
-                </div>
-              </div>
-              <div class="form-inline fr mt-4">
-                <a id="forget" class="font-weight-bold">Forget Password?</a>
-              </div>
-              <button
-                type="submit"
-                class="btn btn-primary w-100 btn btn-block mt-4"
-              >
-                SUBMIT
-              </button>
-              <div class="text-center pt-4 text-muted" id="forget">
-                Dont have an Account?
-                <a id="forget" routerLink="/signup">SignUp</a>
-              </div>
-            </form>
-          </div>
-          <div class="mx-3 my-2 py-1 bordert">
-            <div class="text-center py-3">
-              <img
-                src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg"
-                class="mx-1"
-              />
-              <img
-                src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
-                class="mx-1"
-              />
-              <img
-                src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png"
-                class="mx-1"
-              />
-            </div>
-          </div>
-        </div>
+<!-- navbar starts -->
+<nav class="navbar navbar-expand-lg" style="background-color: #200ca6">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand ms-5 text-warning" routerLink="#"
+      ><h3>
+        <b style="font-family: 'Times New Roman', Times, serif">LIBRARY APP</b>
+      </h3></a
+    >
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            aria-current="page"
+            routerLink="#"
+            style="font-family: 'Times New Roman', Times, serif"
+            ><h5><b>HOME</b></h5></a
+          >
+        </li>
+      </ul>
+      <form class="d-flex mb-3" (click)="onClickLogin()">
+        <button class="btn btn-outline-info text-light me-2" type="submit">
+          <b style="font-family: 'Times New Roman', Times, serif"> LOGIN</b>
+        </button>
+      </form>
+      <form class="d-flex mb-3 me-5" (click)="onClickSignup()">
+        <button class="btn btn-outline-info text-light mb-1" type="click">
+          <b style="font-family: 'Times New Roman', Times, serif"> SIGN UP</b>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- navbar ends  -->
+
+<!-- carousel starts -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="https://i.pinimg.com/564x/c8/b0/7e/c8b07e380215edaaa1903769586a61dc.jpg"
+        alt="..."
+        style="width: 100%; height: 550px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://rare-gallery.com/mocahbig/36467-Fantasy-Book-HD-Wallpaper.jpg"
+        class="d-block w-100"
+        alt="..."
+        style="width: 100%; height: 550px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://live.staticflickr.com/8078/8314929977_28fd740070_b.jpg"
+        class="d-block w-100"
+        alt="..."
+        style="width: 100%; height: 550px"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
   </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- carousel ends -->
+
+<div style="background-color: #200ca6" class="text-center p-4">
+  <small class="text-light">Copyright@2016</small>
 </div>
