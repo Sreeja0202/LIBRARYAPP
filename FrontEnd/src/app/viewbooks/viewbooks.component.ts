@@ -80,6 +80,8 @@ export class ViewbooksComponent implements OnInit {
           }
         );
       }
+    } else {
+      alert('Please check the Format of each field ');
     }
   }
 

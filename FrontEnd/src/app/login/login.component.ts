@@ -38,28 +38,32 @@ export class LoginComponent implements OnInit {
   }
 
   logIn() {
-    this.http.get<any>('http://localhost:3000/users').subscribe(
-      (res) => {
-        const user = res.find((a: any) => {
-          console.log(a);
-          console.log(this.loginForm.value.femail);
-          return (
-            a.femail === this.loginForm.value.femail &&
-            a.fpassword === this.loginForm.value.fpassword
-          );
-        });
-        if (user) {
-          alert('Login Successfull!!!');
-          this.loginForm.reset();
-          this.router.navigate(['/viewbooks']);
-        } else {
-          alert('User not Found');
+    if (this.loginForm.valid) {
+      this.http.get<any>('http://localhost:3000/users').subscribe(
+        (res) => {
+          const user = res.find((a: any) => {
+            console.log(a);
+            console.log(this.loginForm.value.femail);
+            return (
+              a.femail === this.loginForm.value.femail &&
+              a.fpassword === this.loginForm.value.fpassword
+            );
+          });
+          if (user) {
+            alert('Login Successfull!!!');
+            this.loginForm.reset();
+            this.router.navigate(['/viewbooks']);
+          } else {
+            alert('User not Found');
+          }
+        },
+        (err) => {
+          alert('Some error occured');
+          console.log(err);
         }
-      },
-      (err) => {
-        alert('Some error occured');
-        console.log(err);
-      }
-    );
+      );
+    } else {
+      alert('Please enter valid login  credentials');
+    }
   }
 }

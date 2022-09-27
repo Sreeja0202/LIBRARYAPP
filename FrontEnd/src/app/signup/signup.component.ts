@@ -31,14 +31,18 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
-    console.log(this.signupForm.value);
-    this.http
-      .post<any>('http://localhost:3000/users', this.signupForm.value)
-      .subscribe((res) => {
-        console.log(res);
-        alert('Signup successfull');
-        this.router.navigate(['/login']);
-      });
+    if (this.signupForm.valid) {
+      console.log(this.signupForm.value);
+      this.http
+        .post<any>('http://localhost:3000/users', this.signupForm.value)
+        .subscribe((res) => {
+          console.log(res);
+          alert('Signup successfull');
+          this.router.navigate(['/login']);
+        });
+    } else {
+      alert('Please enter valid credentials');
+    }
   }
 
   onClickLogin() {
