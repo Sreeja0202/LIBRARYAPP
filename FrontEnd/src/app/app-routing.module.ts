@@ -2,16 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
-import { ViewcoursesComponent } from './viewcourses/viewcourses.component';
+import { ViewbooksComponent } from './viewbooks/viewbooks.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-  },
-  {
-    path: 'viewcourses',
-    component: ViewcoursesComponent,
   },
   {
     path: 'signup',
@@ -20,6 +16,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'viewbooks',
+    component: ViewbooksComponent,
   },
 ];
 
