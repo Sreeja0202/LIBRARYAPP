@@ -86,6 +86,7 @@ export class ViewbooksComponent implements OnInit {
   }
 
   onAddBook() {
+    this.bookForm.reset();
     this.showModal = true;
   }
 
